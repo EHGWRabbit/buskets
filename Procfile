@@ -1,2 +1,2 @@
-web: gunicorn my-flower-shop.wsgi --log-file -
+web: gunicorn my-testy-shop.wsgi --log-file -
 
