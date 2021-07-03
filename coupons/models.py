@@ -6,7 +6,7 @@ from django.core.validators import MaxValueValidator
 class Coupon(models.Model):
     #cod into to site for user bay
     #код, необходимый для скидки
-    code = models.CharField(max_length=50, unique=True)
+    code = models.CharField(max_length=50, unique=True, verbose_name='Код купона')
     #valid time begin move coupons 
     #время начала дейстия купона
     valid_from = models.DateTimeField()

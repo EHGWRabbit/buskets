@@ -4,16 +4,17 @@ from django.core.validators import MaxValueValidator
 from coupons.models import Coupon
 from django.db import models
 from shop.models import Product 
+from django.utils.translation import gettext_lazy as _ 
 
 
 #моедль заказа
 class Order(models.Model):
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
+    first_name = models.CharField(_('first_name'), max_length=50)
+    last_name = models.CharField(_('last_name'),max_length=50)
     email = models.EmailField()
-    address = models.CharField(max_length=300)
-    postal_code = models.CharField(max_length=20)
-    city = models.CharField(max_length=100)
+    address = models.CharField(_('address'),max_length=300)
+    postal_code = models.CharField(_('postal_code'),max_length=20)
+    city = models.CharField(_('city'),max_length=100)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     paid = models.BooleanField(default=False)
