@@ -10,6 +10,7 @@ pillow = "*"
 whitenoise = "*"
 braintree = "*"
 gunicorn = "*"
+weasyprint = "*"
 
 [dev-packages]
 

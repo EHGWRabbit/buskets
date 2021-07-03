@@ -8,14 +8,14 @@
 {% block title %}
     Заказ {{ order.id }}{{ block.super }}
 {% endblock title %}
+<!--
 
-{% block breadcrumbs %}
     <div class="breadcrumbs">
         <a href="{% url 'admin:index' %}">Домой</a>&rsaquo;
-        <a href="{% url 'admin:orders_order_changelist' %}">Заказы</a>&rsaquo;
-        <a href="{% url 'admin:orders_order_change ' order.id %}">Заказ {{ order.id }}</a>&rsaquo;Подробности
+        <a href="{% url 'admin:index' %}">Заказы</a>&rsaquo;
+        <a href="{% url 'admin:index ' %}">Заказ {{ order.id }}</a>&rsaquo;Подробности
     </div>
-{% endblock breadcrumbs %}
+-->
 
 {% block content %}
     <h1>Заказ {{ order.id }}</h1>

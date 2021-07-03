@@ -1,6 +1,10 @@
-#from django.contrib.admin.views.decorators import staff_member_required 
-#from django.shortcuts import get_object_or_404
-#from .models import Order 
+from django.conf import settings 
+from django.http import HttpResponse 
+from django.template.loader import render_to_string 
+import weasyprint 
+from django.contrib.admin.views.decorators import staff_member_required 
+from django.shortcuts import get_object_or_404
+from .models import Order 
 from django.urls import reverse 
 from django.shortcuts import render
 from django.shortcuts import redirect 
@@ -9,6 +13,7 @@ from .models import OrderItem
 from .forms import OrderCreateform 
 from cart.cart import Cart 
 from .tasks import order_created 
+
 
 def order_create(request):
     cart = Cart(request)
@@ -35,9 +40,23 @@ def order_create(request):
 #add user views on admin panel 
 #добавление пользовательских представлений в админку\
 #is_active and is_staff must be True
-'''
 @staff_member_required
 def admin_order_detail(request, order_id):
     order = get_object_or_404(Order, id=order_id)
     return render(request, 'admin/orders/order/detail.html', {'order': order})
-    '''
+
+
+#create pdf 
+#только пользователи могут получить достук этому контроллеру(представлению)
+@staff_member_required#only users can access this view
+def admin_order_pdf(request, order_id):#get Order with id
+    order = get_object_or_404(Order, id=order_id)
+    #rendering pdf.html and save in html 
+    html = render_to_string('orders/order/pdf.html', {'order': order})
+    #create httpresponse object wtih intro aplication/pdf and names of file
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = "filename='order_{}.pdf'".format(order.id)
+    #create and write object in httpresponse 
+    weasyprint.HTML(string=html).write_pdf(response, stylesheets=[weasyprint.CSS(settings.STATIC_ROOT + 
+                                                                    '/css/pdf.css')])
+    return response

@@ -1,3 +1,8 @@
+from django.template.loader import render_to_string
+from django.core.mail import EmailMessage 
+from django.conf import settings 
+import weasyprint 
+from io import BytesIO 
 import braintree
 from django.shortcuts import render
 from django.shortcuts import redirect
@@ -22,6 +27,15 @@ def payment_process(request):
             order.paid = True#если успешно обработана транзакция ставим истину
             order.braintree_id = result.transaction.id#сохраняем идентификатор шлюза
             order.save()
+            subject = 'my-flowers-eat-shop - Номер заказа. {}'.format(order.id) 
+            message = 'Прикрепленный счет за вашу недавнюю покупку '
+            email = EmailMessage(subject, message, 'admin@my-flowers-eat-shop.herokuapp.com', [order.email])
+            html = render_to_string('orders/order/pdf.html', {'order': order})
+            out = BytesIO()
+            stylesheets = [weasyprint.CSS(settings.STATIC_ROOT + '/css/pdf.css')]
+            weasyprint.HTML(string=html).write_pdf(out, stylesheets=stylesheets)
+            email.attach('order_{}.pdf'.format(order.id), out.getvalue(), 'application/pdf')
+            email.send()
             return redirect('payment:done')#еренаправление на завершение
         else:
             return redirect('payment:canceled')#перенаправление на повтор
