@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Вход в Матрицу{% endblock %}
+
+
+{% block content %}   
+<h1>Логин</h1>
+    {% if form.errors %}
+        <p>
+        Для входа в мир чудес(Матрицу) требуются правильные логин и пароль
+        </p>
+        <p>Как вы догадались - ваша пара логин-пароль неверна</p>
+        <p>Так что ключи от двери в Матрицу не подходят</p>
+        <p>Попробуйте еще раз</p>
+    {% else %}
+        <p>Используй форму ниже и ты узнаешь, глубока ли кроличья нора:</p>
+
+    {% endif %}
+  <div class="img-login"></div>
+<div class="login-form">
+<form action="{% url 'login' %}" method="post">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <input type="hidden" name="next" value="{{ next }}" />
+    <p>Красная таблетка</p>
+    <p><input type="submit" value="Войти в систему"></p>
+</form>
+<p><a href="{% url 'password_reset' %}">Забыл паспорт(пароль, имя, голову и так далее...)</a></p>
+<p>Если ты еще никогда не путешествовал в Страну Чудес(Матрицу) тогда зарегистрируйся и в путь!</p>
+<a href="{% url 'register' %}">Регистрация</a>
+</div>
+<div class="social">
+    <ul>
+    <li class="facebook"><a href="{% url 'social:begin' 'facebook' %}">Войти через страшный Facebook</a></li>
+    </ul>
+    </div>
+{% endblock content %} 

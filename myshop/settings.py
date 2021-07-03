@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     #downloaded
     #'pillow',
     'whitenoise.runserver_nostatic',
+    'bootstrap4'
     #'celery',
 ]
 
@@ -196,3 +197,13 @@ Configuration.configure(
 REDIS_HOST = 'localhost'
 REDIS_PORT = 6379
 REDIS_DB = 1 
+
+
+#юрл для входа
+#LOGIN_URL = 'login'
+
+#юрл для выхода
+#LOGOUT_URL = 'logout'
+
+LOGIN_REDIRECT_URL = ''
+LOGOUT_REDIRECT_URL = ''

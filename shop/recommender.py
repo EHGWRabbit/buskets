@@ -1,7 +1,7 @@
 import redis 
 from django.conf import settings 
 from .models import Product 
-
+'''
 #connecting to redis
 #соединение с redis
 r = redis.StrictRedis(host=settings.REDIS_HOST, port=settings.REDIS_PORT, db=settings.REDIS_DB)
@@ -73,3 +73,4 @@ class Recommender(object):
         for id in Product.objects.values_list('id', flat=True):
             r.delete(self.get_product_key(id))
 
+'''

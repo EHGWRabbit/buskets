@@ -2,7 +2,7 @@
 
 body { 
     margin:0;
-    padding:0;
+    padding:3%;
     font-family:helvetica, sans-serif; 
 }
 
@@ -12,11 +12,12 @@ h1, h2, h3, h4, h5 , h6 {
 
 a {
     text-decoration:none;
-    color:#5993bb;
+    color:brown;
 }
 
 a:hover {
-    color:#77b6e2;
+    color:firebrick;
+    font-size: 19px;
 }
 
 a.button, input[type="submit"] {
@@ -123,18 +124,16 @@ ul.errorlist {
 }
 
 #subheader {
-    background:#ececec;
-    color:#444;
+    color:black;
     padding:15px 100px;
     overflow:auto;
 }
-
 #header .logo {
     font-family: 'Ubuntu', sans-serif;
     float:left;
-    color:#333;
     font-size:22px;
     margin-right:10%;
+    background-color: antiquewhite;
 }
 
 #subheader .cart {

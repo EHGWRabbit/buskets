@@ -10,10 +10,11 @@
 {% endblock title %}
 
 {% block content %}
+<div class="container-fluide">
     <div id="sidebar">
         <h3>Категории</h3>
         <ul>
-            <li {% if not category %} class="selected" {% endif %}>
+            <li {% if not category %} class="selected one" {% endif %}>
                 <a href="{% url 'shop:product_list' %}">Все</a>
             </li>
             {% for c in categories %} 
@@ -35,6 +36,7 @@
                 {{ product.price }} руб.
             </div>
         {% endfor %}
+    </div>
     </div>
 {% endblock content %}
     

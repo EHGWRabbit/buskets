@@ -12,6 +12,7 @@ braintree = "*"
 gunicorn = "*"
 weasyprint = "*"
 redis = "*"
+django-bootstrap4 = "*"
 
 [dev-packages]
 
