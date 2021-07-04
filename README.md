@@ -11,39 +11,51 @@
 ###GETTING STARTED
 
 
-[]open terminal
+open terminal
 
 
-[]cd/buskets
+cd/buskets
 
 
-[]pipenv shell this 
+pipenv shell this 
+
+pypenv install from requirements.txt 
 
 
-[]pypenv install from requirements.txt 
-
-
-[]after this 
+after this 
 
 
 pipenv shell
+
+
 python manage.py runserver
+
+
 open browser in localhost:8000
 
+
 ###BUGS ABOUT I KNOW
+
 1.dont download images in heroku server from local machine and from admin panel, It began from 17 version app. on searchig this bug no time now.
 
 ###NOT DONE YET
+
 1. dont added styles from bootstrap4.
-2.dont added locale and intarnations.
-3.dont addaptive sites.
-4.dont added authentification and authorisations.
-5.dont added postgresql.
+2. 
+3.dont added locale and intarnations.
+
+4.dont addaptive sites.
+
+5.dont added authentification and authorisations.
+
 6.dont added docker.
+
 7.dont added prodaction breetree.
 
 ###WARNING
+
 this app - my first app in e_commerse apps.
+
 I understand that something has not been completed yet, but everything has its time.
 
 #GOOD LUCK, GUYS!
