@@ -4,13 +4,15 @@
 
 ##Getting started
 
-###***INSTALLATION
-for begin use this app you need download pipenv or virtualenv
-download this app for link git clone https://github.com/EHGWRabbit/buskets.git***
+###INSTALLATION
+
+##***for begin use this app you need download pipenv or virtualenv***
+
+##download this app for link git clone https://github.com/EHGWRabbit/buskets.git
 
 ###GETTING STARTED
-open terminal
-cd/buskets
+>open terminal
+>cd/buskets
 pipenv shell this 
 pypenv install from requirements.txt 
 after this 
