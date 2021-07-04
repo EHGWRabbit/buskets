@@ -8,10 +8,12 @@
 
 ##download this app for link git clone https://github.com/EHGWRabbit/buskets.git
 
-[x]GETTING STARTED
-[]open terminal
-[]cd/buskets
-[]pipenv shell this 
+###GETTING STARTED
+
+
+open terminal
+cd/buskets
+pipenv shell this 
 pypenv install from requirements.txt 
 after this 
 pipenv shell
