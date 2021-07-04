@@ -11,11 +11,21 @@
 ###GETTING STARTED
 
 
-open terminal
-cd/buskets
-pipenv shell this 
-pypenv install from requirements.txt 
-after this 
+[]open terminal
+
+
+[]cd/buskets
+
+
+[]pipenv shell this 
+
+
+[]pypenv install from requirements.txt 
+
+
+[]after this 
+
+
 pipenv shell
 python manage.py runserver
 open browser in localhost:8000
