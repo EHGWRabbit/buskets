@@ -13,6 +13,7 @@
 
 open terminal
 
+pip install pipenv
 
 cd/buskets
 
