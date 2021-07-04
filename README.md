@@ -41,16 +41,18 @@ open browser in localhost:8000
 ###NOT DONE YET
 
 1. dont added styles from bootstrap4.
-2. 
-3.dont added locale and intarnations.
 
-4.dont addaptive sites.
+2.dont added locale and intarnations.
 
-5.dont added authentification and authorisations.
+3.dont addaptive sites.
 
-6.dont added docker.
+4.dont added authentification and authorisations.
 
-7.dont added prodaction breetree.
+5.dont added docker.
+
+6.dont added prodaction breetree.
+
+7.and more...
 
 ###WARNING
 
